@@ -85,7 +85,7 @@ npm start
 
 ### 📦 Orders Page
 <p align="center">
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/otrders.png?raw=true" width="600"/>
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/orders.png?raw=true" width="600"/>
 </p>
 
 ---
@@ -101,5 +101,5 @@ npm start
 
 ### 🔐 Google Authentication
 <p align="center">
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/google%20authentication.png?raw=true" width="600"/>
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/google%20auth.png?raw=true" width="600"/>
 </p>
