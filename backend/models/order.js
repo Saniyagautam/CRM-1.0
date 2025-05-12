@@ -93,8 +93,31 @@ orderSchema.pre('save', function(next) {
 // Generate order number before saving
 orderSchema.pre('save', async function(next) {
   if (this.isNew) {
-    const count = await mongoose.model('Order').countDocuments();
-    this.orderNumber = `ORD${(count + 1).toString().padStart(6, '0')}`;
+    try {
+      // Find the highest order number
+      const highestOrder = await mongoose.model('Order')
+        .findOne({}, { orderNumber: 1 })
+        .sort({ orderNumber: -1 });
+
+      if (highestOrder) {
+        // Extract the number from the existing highest order number
+        const currentNumber = parseInt(highestOrder.orderNumber.replace('ORD', ''));
+        this.orderNumber = `ORD${(currentNumber + 1).toString().padStart(6, '0')}`;
+      } else {
+        // If no orders exist, start with ORD000001
+        this.orderNumber = 'ORD000001';
+      }
+
+      // Verify uniqueness
+      const existingOrder = await mongoose.model('Order').findOne({ orderNumber: this.orderNumber });
+      if (existingOrder) {
+        // If somehow the number exists, generate a timestamp-based unique number as fallback
+        const timestamp = Date.now();
+        this.orderNumber = `ORD${timestamp}`;
+      }
+    } catch (error) {
+      return next(error);
+    }
   }
   next();
 });
