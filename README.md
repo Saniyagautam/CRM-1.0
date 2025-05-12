@@ -46,8 +46,6 @@ A smart CRM web application to manage customers, create dynamic campaigns, track
 
 ---
 
----
-
 ## 🚀 Installation
 
 ### 1. Clone the repository
@@ -69,18 +67,39 @@ npm start
 
 ## 📸 Screenshots
 
-<p float="left">
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/dashboard.png?raw=true" width="300" alt="Dashboard" />
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/add%20customer.png?raw=true" width="300" alt="Add Customer" />
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/otrders.png?raw=true" width="300" alt="Orders" />
+### 🏠 Dashboard Overview
+<p align="center">
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/dashboard.png?raw=true" width="600"/>
 </p>
 
-<p float="left">
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/add%20order.png?raw=true" width="300" alt="Add Order" />
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/campaigns.png?raw=true" width="300" alt="Campaigns" />
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/campaign%20logs.png?raw=true" width="300" alt="Campaign Logs" />
+---
+
+### ➕ Add Customer & ➕ Add Order
+<p align="center">
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/add%20customer.png?raw=true" width="300"/>
+  &nbsp;&nbsp;
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/add%20order.png?raw=true" width="300"/>
 </p>
 
-<p float="left">
-  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/google%20authentication.png?raw=true" width="300" alt="Google Auth" />
+---
+
+### 📦 Orders Page
+<p align="center">
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/otrders.png?raw=true" width="600"/>
+</p>
+
+---
+
+### 📣 Campaigns & 📋 Campaign Logs
+<p align="center">
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/campaigns.png?raw=true" width="300"/>
+  &nbsp;&nbsp;
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/campaign%20logs.png?raw=true" width="300"/>
+</p>
+
+---
+
+### 🔐 Google Authentication
+<p align="center">
+  <img src="https://github.com/Saniyagautam/CRM-1.0/blob/main/frontend/public/google%20authentication.png?raw=true" width="600"/>
 </p>
