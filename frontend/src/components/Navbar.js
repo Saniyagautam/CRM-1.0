@@ -3,10 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import {
   AppBar,
   Toolbar,
-  Typography,
   Button,
-  Box,
-  IconButton,
   Stack
 } from '@mui/material';
 import HomeIcon from '@mui/icons-material/Home';
