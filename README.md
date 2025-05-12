@@ -55,14 +55,14 @@ git clone https://github.com/Saniyagautam/CRM-1.0
 
 ### 2. For Frontend
 
-cd frontend
-npm install
-npm start
+-cd frontend 
+-npm install
+-npm start
 
 ### 3. For Backend
-cd backend
-npm install
-npm start
+-cd backend
+-npm install
+-npm start
 
 
 ## 📸 Screenshots
