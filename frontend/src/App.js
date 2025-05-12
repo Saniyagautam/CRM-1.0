@@ -1,6 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline } from '@mui/material';
+import { GoogleOAuthProvider } from '@react-oauth/google';
+import { AuthProvider } from './contexts/AuthContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './components/Login';
 import Navbar from './components/Navbar';
 import Dashboard from './components/Dashboard';
 import CustomerList from './components/CustomerList';
@@ -106,28 +110,63 @@ const theme = createTheme({
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router>
-        <div>
-          <Navbar />
-          <Routes>
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/customers" element={<CustomerList />} />
-            <Route path="/customer/:id" element={<CustomerDetail />} />
-            <Route path="/customer/new" element={<AddCustomer />} />
-            <Route path="/orders" element={<OrderList />} />
-            <Route path="/order/new" element={<AddOrder />} />
-            <Route path="/order/edit/:id" element={<EditOrder />} />
-            <Route path="/campaigns" element={<CampaignHistory />} />
-            <Route path="/campaign/new" element={<CampaignBuilder />} />
-            <Route path="/campaign/:id" element={<CampaignBuilder />} />
-            <Route path="/campaign/:id/logs" element={<CampaignLogs />} />
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-          </Routes>
-        </div>
-      </Router>
-    </ThemeProvider>
+    <GoogleOAuthProvider clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}>
+      <AuthProvider>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Router>
+            <div>
+              <Navbar />
+              <Routes>
+                <Route path="/login" element={<Login />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/customers" element={<CustomerList />} />
+                <Route path="/customer/:id" element={<CustomerDetail />} />
+                <Route path="/customer/new" element={<AddCustomer />} />
+                <Route path="/orders" element={<OrderList />} />
+                <Route path="/order/new" element={<AddOrder />} />
+                <Route path="/order/edit/:id" element={<EditOrder />} />
+                
+                {/* Protected Campaign Routes */}
+                <Route
+                  path="/campaigns"
+                  element={
+                    <ProtectedRoute>
+                      <CampaignHistory />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/campaign/new"
+                  element={
+                    <ProtectedRoute>
+                      <CampaignBuilder />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/campaign/:id"
+                  element={
+                    <ProtectedRoute>
+                      <CampaignBuilder />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route
+                  path="/campaign/:id/logs"
+                  element={
+                    <ProtectedRoute>
+                      <CampaignLogs />
+                    </ProtectedRoute>
+                  }
+                />
+                <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              </Routes>
+            </div>
+          </Router>
+        </ThemeProvider>
+      </AuthProvider>
+    </GoogleOAuthProvider>
   );
 }
 
