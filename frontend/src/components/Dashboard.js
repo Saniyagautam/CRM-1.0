@@ -64,7 +64,7 @@ const Dashboard = () => {
             color: 'transparent'
           }}
         >
-          Welcome to Your CRM Dashboard
+          Welcome to CRMSync
         </Typography>
         
         <Grid container spacing={4}>
